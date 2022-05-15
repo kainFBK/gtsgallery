@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+    <head>
+        <!-- 声明当前页面的编码集：charset=gbk,gb2312(中文编码) , utf-8(国际编码) -->
+        <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+        <!-- 声明当前页面的三元素 -->
+        <title>test</title>
+        <meta name='keywords' content='关键词,关键词'>
+        <meta name='description' content=''>
+ 
+        <link href="http://vjs.zencdn.net/7.3.0/video-js.min.css" rel="stylesheet">
+		<script src="http://vjs.zencdn.net/7.3.0/video.min.js"></script>
+		<style type="text/css">
+			.vjs-fullscreen .vjs-tech{
+				transform: rotate(90deg) !important;
+				height: 100vw;
+				width: 100vh;
+			}
+		</style>
+ 
+    </head>
+<body>
+<video
+    id="my-player"
+    class="video-js"
+    controls
+    preload="auto"
+    poster="http://vjs.zencdn.net/v/oceans.png"
+    data-setup='{}'>
+  <source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4"></source>
+  <source src="http://vjs.zencdn.net/v/oceans.webm" type="video/webm"></source>
+  <source src="http://vjs.zencdn.net/v/oceans.ogv" type="video/ogg"></source>
+  <p class="vjs-no-js">
+    To view this video please enable JavaScript, and consider upgrading to a
+    web browser that
+    <a href="https://videojs.com/html5-video-support/" target="_blank">
+      supports HTML5 video
+    </a>
+  </p>
+</video>
+ 
+ <script type="text/javascript">
+	var options = {};
+
+	var player = videojs('my-player', options, function onPlayerReady() {
+	  videojs.log('Your player is ready!');
+
+	  // In this context, `this` is the player that was created by Video.js.
+	  // this.play();
+
+	  // How about an event listener?
+	  this.on('ended', function() {
+	    videojs.log('Awww...over so soon?!');
+	  });
+	});
+</script>
+</body>
+</html>
